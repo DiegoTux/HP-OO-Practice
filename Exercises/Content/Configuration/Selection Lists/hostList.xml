@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<selectionList id="7ae9d101-404b-4acf-abd9-88063abd99a6">
+  <descriptionCdata><![CDATA[]]></descriptionCdata>
+  <annotation></annotation>
+  <name>hostList</name>
+  <storage>
+    <string>North_Host_Server</string>
+    <string>South_Host_Server</string>
+    <string>West_Host_Server</string>
+    <string>East_Host_Server</string>
+  </storage>
+</selectionList>
