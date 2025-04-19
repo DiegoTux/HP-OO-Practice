@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<regexEvaluator id="2b725219-2bd8-4033-a150-4a35810ae3de">
+  <descriptionCdata><![CDATA[2b725219-2bd8-4033-a150-4a35810ae3de.description=Evaluador para las direcciones de correo electr\u00F3nico. No admite caracteres internacionales (RFC\n5336). No admite comillas para la parte local (por ejemplo, "John\nSmith"@company.com).
+]]></descriptionCdata>
+  <annotation>2b725219-2bd8-4033-a150-4a35810ae3de.description</annotation>
+  <name>email</name>
+  <entireString>true</entireString>
+  <expression>[\w.%+-]+@[[:lower:][:upper:][:digit:].-]+\.[^\W\d]{2,6}</expression>
+  <ignoreCase>false</ignoreCase>
+  <multiLine>false</multiLine>
+  <regType>PERL5</regType>
+</regexEvaluator>

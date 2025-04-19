@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<operation id="d86cfe52-6a0f-41e6-a736-7c2e0ba649f9">
+  <descriptionCdata><![CDATA[d86cfe52-6a0f-41e6-a736-7c2e0ba649f9.description=<pre>\nEsta operaci\u00F3n no realizar\u00E1 ninguna acci\u00F3n. Se puede usar para filtrar variables de flujo defini\u00E9ndolas como entradas y filtr\u00E1ndolas en la ficha Resultados.\n\nEntradas\:\n    field1 \u2013 Una entrada opcional que se puede usar para filtrar variables de flujo.\n    field2 \u2013 Una entrada opcional que se puede usar para filtrar variables de flujo.\n    field3 \u2013 Una entrada opcional que se puede usar para filtrar variables de flujo.\n    field4 \u2013 Una entrada opcional que se puede usar para filtrar variables de flujo.\n\nResultados\:\n    returnResult - Esta es la salida principal. Contiene el valor de "field1", tal como se especific\u00F3 en la entrada o cuando se filtr\u00F3. \n\nRespuestas\:\n    success - La operaci\u00F3n ha finalizado tal como se indica en la descripci\u00F3n.\n</pre>
+]]></descriptionCdata>
+  <annotation>d86cfe52-6a0f-41e6-a736-7c2e0ba649f9.description</annotation>
+  <name>Validate Email Address</name>
+  <categories/>
+  <inputs>
+    <staticBinding id="ed67b9b1-cf13-4295-b445-5088bcc38adf">
+      <annotation></annotation>
+      <assignFromContext>true</assignFromContext>
+      <assignToContext>true</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>false</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>field1</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <value></value>
+      <record>false</record>
+    </staticBinding>
+    <staticBinding id="099a80e0-3ce4-4972-a14f-d4fd3d9f681a">
+      <annotation></annotation>
+      <assignFromContext>true</assignFromContext>
+      <assignToContext>true</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>false</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>field2</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <value></value>
+      <record>false</record>
+    </staticBinding>
+    <staticBinding id="0eebc2a0-985f-4638-a2cf-4189a80af295">
+      <annotation></annotation>
+      <assignFromContext>true</assignFromContext>
+      <assignToContext>true</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>false</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>field3</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <value></value>
+      <record>false</record>
+    </staticBinding>
+    <staticBinding id="679a8d11-09c8-4028-8652-9ecdbd932626">
+      <annotation></annotation>
+      <assignFromContext>true</assignFromContext>
+      <assignToContext>true</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>false</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>field4</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <value></value>
+      <record>false</record>
+    </staticBinding>
+  </inputs>
+  <scriptlet id="b5fec23a-dac3-484b-ae42-3ddfead64dbf">
+    <annotation></annotation>
+    <name>Operation Validate Email Address (d86cfe52-6a0f-41e6-a736-7c2e0ba649f9)</name>
+    <script>if (typeof field1 != &apos;undefined&apos;) {
+	scriptletResult = field1;
+} else {
+	scriptletResult = &quot;&quot;;
+} 
+</script>
+    <type>RHINO</type>
+  </scriptlet>
+  <possibleResponses>
+    <opResponse id="6bbae9a5-ac13-4722-8902-a4e251e5c861">
+      <annotation></annotation>
+      <name>Valid Email</name>
+      <isDefault>false</isDefault>
+      <onFailure>false</onFailure>
+      <type>RESOLVED</type>
+      <matchRules>
+        <expression id="34599ed7-c0db-4712-82f0-79ff46613baf">
+          <annotation></annotation>
+          <name>Field_1</name>
+          <fieldName>Field_1</fieldName>
+          <sourceType>RAWRESULT</sourceType>
+          <referenceEvaluator id="95ee3d2a-494d-4197-af7c-ee7abb9f0bb7">
+            <annotation></annotation>
+            <name>Config Item</name>
+            <evaluatorRef>
+              <refId>2b725219-2bd8-4033-a150-4a35810ae3de</refId>
+              <refName>email</refName>
+            </evaluatorRef>
+          </referenceEvaluator>
+          <filters/>
+        </expression>
+      </matchRules>
+    </opResponse>
+    <opResponse id="52f997ab-d8e2-4528-b32b-1380f2072c05">
+      <annotation></annotation>
+      <name>Invalid Email</name>
+      <isDefault>true</isDefault>
+      <onFailure>true</onFailure>
+      <type>ERROR</type>
+      <matchRules/>
+    </opResponse>
+  </possibleResponses>
+  <availableResultExpressions/>
+  <resultExpression id="3baa8478-43a5-4cbc-b411-ba267e66562a">
+    <annotation></annotation>
+    <name>returnResult</name>
+    <fieldName>returnResult</fieldName>
+    <sourceType>RAWRESULT</sourceType>
+    <filters/>
+  </resultExpression>
+  <iconSpec id="a18aaa7a-864e-436a-84c4-11a805e28b28">
+    <baseIcon>display_report.png</baseIcon>
+    <basePath>Utilities/</basePath>
+    <readOnly>false</readOnly>
+    <layers/>
+  </iconSpec>
+  <opRef>
+    <refId>ddd79f22-8b1e-4605-88d5-d912bb2da2b9</refId>
+  </opRef>
+  <fieldValues/>
+  <groupAliasRef>
+    <refId>5233030c-af46-432b-a682-b326ca6bf2ae</refId>
+    <refName>RAS_Operator_Path</refName>
+  </groupAliasRef>
+  <overrideGroupAlias>${overrideJRAS}</overrideGroupAlias>
+</operation>

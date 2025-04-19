@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow id="7d083fda-be5a-4c9c-8005-babea4c77b02">
+  <descriptionCdata><![CDATA[7d083fda-be5a-4c9c-8005-babea4c77b02.a123c384-e8c9-41cb-b4fc-9d4df70084c9.description=<pre>\nEsta operaci\u00F3n no realizar\u00E1 ninguna acci\u00F3n. Se puede usar para filtrar variables de flujo defini\u00E9ndolas como entradas y filtr\u00E1ndolas en la ficha Resultados.\n\nEntradas\:\n    field1 \u2013 Una entrada opcional que se puede usar para filtrar variables de flujo.\n    field2 \u2013 Una entrada opcional que se puede usar para filtrar variables de flujo.\n    field3 \u2013 Una entrada opcional que se puede usar para filtrar variables de flujo.\n    field4 \u2013 Una entrada opcional que se puede usar para filtrar variables de flujo.\n\nResultados\:\n    returnResult - Esta es la salida principal. Contiene el valor de "field1", tal como se especific\u00F3 en la entrada o cuando se filtr\u00F3. \n\nRespuestas\:\n    success - La operaci\u00F3n ha finalizado tal como se indica en la descripci\u00F3n.\n</pre>
+7d083fda-be5a-4c9c-8005-babea4c77b02.cbba9d85-2cf3-4826-aa19-39b9cd24a2d2.prompt=${Field_1} is a valid email address
+7d083fda-be5a-4c9c-8005-babea4c77b02.e21483c5-84fb-44ec-a054-5881a0c40331.prompt=${Field_1} is not a valid email address
+7d083fda-be5a-4c9c-8005-babea4c77b02.f7600210-d49a-433c-8296-215a7a1c2d8f.prompt=Please enter an email address\:
+]]></descriptionCdata>
+  <annotation></annotation>
+  <name>Validate Email Address</name>
+  <categories/>
+  <inputs/>
+  <possibleResponses>
+    <opResponse id="3add406a-7705-4b64-8e95-a136b29f8506">
+      <annotation></annotation>
+      <name>success</name>
+      <isDefault>true</isDefault>
+      <onFailure>false</onFailure>
+      <type>RESOLVED</type>
+      <matchRules/>
+    </opResponse>
+    <opResponse id="c674e960-11e4-4c09-989e-ace65e625b81">
+      <annotation></annotation>
+      <name>failure</name>
+      <isDefault>false</isDefault>
+      <onFailure>true</onFailure>
+      <type>ERROR</type>
+      <matchRules/>
+    </opResponse>
+  </possibleResponses>
+  <availableResultExpressions/>
+  <resultExpression id="a097d48f-d10f-4f9e-ab50-74352527ce03">
+    <annotation></annotation>
+    <name>FailureMessage</name>
+    <fieldName>FailureMessage</fieldName>
+    <sourceType>RAWRESULT</sourceType>
+    <filters/>
+  </resultExpression>
+  <iconSpec id="92d77d96-82e2-4808-ab9b-19644077acb8">
+    <baseIcon>flow.png</baseIcon>
+    <basePath>System</basePath>
+    <readOnly>false</readOnly>
+    <layers/>
+  </iconSpec>
+  <callouts/>
+  <checkPointFlow>true</checkPointFlow>
+  <compatibleRuntimeContext>false</compatibleRuntimeContext>
+  <historyCheckPointFlow>true</historyCheckPointFlow>
+  <steps>
+    <step id="a123c384-e8c9-41cb-b4fc-9d4df70084c9">
+      <annotation>7d083fda-be5a-4c9c-8005-babea4c77b02.a123c384-e8c9-41cb-b4fc-9d4df70084c9.description</annotation>
+      <name>Validate Email Address</name>
+      <bounds>
+        <x>255.0</x>
+        <y>114.0</y>
+      </bounds>
+      <layer>-1</layer>
+      <hideInbound>false</hideInbound>
+      <addResultToRunContext>false</addResultToRunContext>
+      <isCriticalStep>false</isCriticalStep>
+      <isNonBlocking>false</isNonBlocking>
+      <isParallelStep>false</isParallelStep>
+      <isSingleResponse>false</isSingleResponse>
+      <recordInHistory>false</recordInHistory>
+      <recordRawOutput>true</recordRawOutput>
+      <recordPrimaryOutput>true</recordPrimaryOutput>
+      <checkPointStep>true</checkPointStep>
+      <historyCheckPointStep>true</historyCheckPointStep>
+      <scriptResultStep>false</scriptResultStep>
+      <userPrompt></userPrompt>
+      <bindings>
+        <userInputBinding id="f7600210-d49a-433c-8296-215a7a1c2d8f">
+          <annotation></annotation>
+          <assignFromContext>false</assignFromContext>
+          <assignToContext>true</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>false</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>Field_1</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <record>false</record>
+          <prompt>7d083fda-be5a-4c9c-8005-babea4c77b02.f7600210-d49a-433c-8296-215a7a1c2d8f.prompt</prompt>
+          <isMultiSelect>false</isMultiSelect>
+          <sourceDelimiter>|</sourceDelimiter>
+        </userInputBinding>
+      </bindings>
+      <transitions>
+        <transition id="924ef55a-b043-4c6b-8acc-38fa5f36698e">
+          <annotation></annotation>
+          <name>Invalid Email</name>
+          <command>NEXT</command>
+          <linkMode>false</linkMode>
+          <responseSymbol>Invalid Email</responseSymbol>
+          <shouldHandoff>false</shouldHandoff>
+          <transitionValue>0.0</transitionValue>
+          <destination>
+            <refId>e21483c5-84fb-44ec-a054-5881a0c40331</refId>
+          </destination>
+          <source>
+            <refId>a123c384-e8c9-41cb-b4fc-9d4df70084c9</refId>
+          </source>
+          <positions>
+            <point>
+              <x>306.0</x>
+              <y>195.0</y>
+            </point>
+            <point>
+              <x>557.0</x>
+              <y>321.0</y>
+            </point>
+          </positions>
+          <labelPosition>
+            <x>333.0</x>
+            <y>0.0</y>
+          </labelPosition>
+        </transition>
+        <transition id="13d9f4da-33d7-4738-9ae1-15cae7c486c8">
+          <annotation></annotation>
+          <name>Valid Email</name>
+          <command>NEXT</command>
+          <linkMode>false</linkMode>
+          <responseSymbol>Valid Email</responseSymbol>
+          <shouldHandoff>false</shouldHandoff>
+          <transitionValue>0.0</transitionValue>
+          <destination>
+            <refId>cbba9d85-2cf3-4826-aa19-39b9cd24a2d2</refId>
+          </destination>
+          <source>
+            <refId>a123c384-e8c9-41cb-b4fc-9d4df70084c9</refId>
+          </source>
+          <positions>
+            <point>
+              <x>306.0</x>
+              <y>195.0</y>
+            </point>
+            <point>
+              <x>557.0</x>
+              <y>129.0</y>
+            </point>
+          </positions>
+          <labelPosition>
+            <x>333.0</x>
+            <y>0.0</y>
+          </labelPosition>
+        </transition>
+      </transitions>
+      <properties/>
+      <opRef>
+        <refId>d86cfe52-6a0f-41e6-a736-7c2e0ba649f9</refId>
+      </opRef>
+      <assignments/>
+      <throttleSize>0</throttleSize>
+    </step>
+    <returnStep id="cbba9d85-2cf3-4826-aa19-39b9cd24a2d2">
+      <annotation></annotation>
+      <name>Resuelto : success</name>
+      <bounds>
+        <x>507.0</x>
+        <y>95.0</y>
+      </bounds>
+      <layer>-1</layer>
+      <hideInbound>false</hideInbound>
+      <addResultToRunContext>false</addResultToRunContext>
+      <isCriticalStep>true</isCriticalStep>
+      <isNonBlocking>false</isNonBlocking>
+      <isParallelStep>false</isParallelStep>
+      <isSingleResponse>false</isSingleResponse>
+      <recordInHistory>false</recordInHistory>
+      <recordRawOutput>true</recordRawOutput>
+      <recordPrimaryOutput>true</recordPrimaryOutput>
+      <checkPointStep>true</checkPointStep>
+      <historyCheckPointStep>true</historyCheckPointStep>
+      <scriptResultStep>false</scriptResultStep>
+      <userPrompt>7d083fda-be5a-4c9c-8005-babea4c77b02.cbba9d85-2cf3-4826-aa19-39b9cd24a2d2.prompt</userPrompt>
+      <bindings/>
+      <transitions>
+        <transition id="e8f3c961-df84-453b-8de7-d114ac72cc7b">
+          <annotation></annotation>
+          <name>return</name>
+          <command>NEXT</command>
+          <linkMode>false</linkMode>
+          <responseSymbol>success</responseSymbol>
+          <shouldHandoff>false</shouldHandoff>
+          <transitionValue>0.0</transitionValue>
+          <destination>
+            <refId>cbba9d85-2cf3-4826-aa19-39b9cd24a2d2</refId>
+          </destination>
+          <source>
+            <refId>cbba9d85-2cf3-4826-aa19-39b9cd24a2d2</refId>
+          </source>
+          <positions/>
+        </transition>
+      </transitions>
+      <properties>
+        <entry>
+          <key>Prompt Title</key>
+          <modelValue id="608b3050-3870-4f94-89c1-3594bfeac358">
+            <doubleValue>0.0</doubleValue>
+            <stringValue>Message</stringValue>
+            <encrypted>false</encrypted>
+            <type>9</type>
+          </modelValue>
+        </entry>
+      </properties>
+      <returnStepType>RESOLVED</returnStepType>
+      <assignments/>
+    </returnStep>
+    <returnStep id="e21483c5-84fb-44ec-a054-5881a0c40331">
+      <annotation></annotation>
+      <name>Error : failure</name>
+      <bounds>
+        <x>507.0</x>
+        <y>287.0</y>
+      </bounds>
+      <layer>-1</layer>
+      <hideInbound>false</hideInbound>
+      <addResultToRunContext>false</addResultToRunContext>
+      <isCriticalStep>true</isCriticalStep>
+      <isNonBlocking>false</isNonBlocking>
+      <isParallelStep>false</isParallelStep>
+      <isSingleResponse>false</isSingleResponse>
+      <recordInHistory>false</recordInHistory>
+      <recordRawOutput>true</recordRawOutput>
+      <recordPrimaryOutput>true</recordPrimaryOutput>
+      <checkPointStep>true</checkPointStep>
+      <historyCheckPointStep>true</historyCheckPointStep>
+      <scriptResultStep>false</scriptResultStep>
+      <userPrompt>7d083fda-be5a-4c9c-8005-babea4c77b02.e21483c5-84fb-44ec-a054-5881a0c40331.prompt</userPrompt>
+      <bindings/>
+      <transitions>
+        <transition id="b0fb6b2f-93c2-40ee-ac96-51e1a95a61f3">
+          <annotation></annotation>
+          <name>return</name>
+          <command>NEXT</command>
+          <linkMode>false</linkMode>
+          <responseSymbol>failure</responseSymbol>
+          <shouldHandoff>false</shouldHandoff>
+          <transitionValue>0.0</transitionValue>
+          <destination>
+            <refId>e21483c5-84fb-44ec-a054-5881a0c40331</refId>
+          </destination>
+          <source>
+            <refId>e21483c5-84fb-44ec-a054-5881a0c40331</refId>
+          </source>
+          <positions/>
+        </transition>
+      </transitions>
+      <properties>
+        <entry>
+          <key>Prompt Title</key>
+          <modelValue id="5e327672-1ab3-4b54-8fd1-c6866c2c651c">
+            <doubleValue>0.0</doubleValue>
+            <stringValue>Messagge</stringValue>
+            <encrypted>false</encrypted>
+            <type>9</type>
+          </modelValue>
+        </entry>
+      </properties>
+      <returnStepType>ERROR</returnStepType>
+      <assignments/>
+    </returnStep>
+  </steps>
+  <startSteps>a123c384-e8c9-41cb-b4fc-9d4df70084c9</startSteps>
+</flow>
