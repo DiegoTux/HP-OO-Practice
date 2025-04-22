@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<selectionList id="72656ad1-7e42-4d55-bfb4-8a91dc8c8f8d">
+  <descriptionCdata><![CDATA[72656ad1-7e42-4d55-bfb4-8a91dc8c8f8d.description=Text colors for XSL Params exercise
+]]></descriptionCdata>
+  <annotation>72656ad1-7e42-4d55-bfb4-8a91dc8c8f8d.description</annotation>
+  <name>XSL Text Colors</name>
+  <storage>
+    <string>red</string>
+    <string>green</string>
+    <string>blue</string>
+    <string>yellow</string>
+    <string>black</string>
+  </storage>
+</selectionList>

@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow id="35f03d7e-5f44-4cab-b5eb-f6dfc5948ead">
+  <descriptionCdata><![CDATA[35f03d7e-5f44-4cab-b5eb-f6dfc5948ead.2c4a6760-42e0-4df6-98a0-39a466830bc5.description=<pre>\nEsta operaci\u00F3n no realizar\u00E1 ninguna acci\u00F3n. Se puede usar para filtrar variables de flujo defini\u00E9ndolas como entradas y filtr\u00E1ndolas en la ficha Resultados.\n\nEntradas\:\n    field1 \u2013 Una entrada opcional que se puede usar para filtrar variables de flujo.\n    field2 \u2013 Una entrada opcional que se puede usar para filtrar variables de flujo.\n    field3 \u2013 Una entrada opcional que se puede usar para filtrar variables de flujo.\n    field4 \u2013 Una entrada opcional que se puede usar para filtrar variables de flujo.\n\nResultados\:\n    returnResult - Esta es la salida principal. Contiene el valor de "field1", tal como se especific\u00F3 en la entrada o cuando se filtr\u00F3. \n\nRespuestas\:\n    success - La operaci\u00F3n ha finalizado tal como se indica en la descripci\u00F3n.\n</pre>
+35f03d7e-5f44-4cab-b5eb-f6dfc5948ead.ce13f411-08db-47a2-93d7-3bebe9c1149b.description=<pre>\n\nMuestra un mensaje al usuario.\n\nEntradas\:\n  message - El texto de mensaje que se mostrar\u00E1\n  title - El t\u00EDtulo de la ventana de mensajes. El valor predeterminado es "Mensaje de estado".\n\nRespuestas\:\n  Devuelve siempre el estado correcto.\n\nEjemplos\:\n  Para mostrar el mensaje "Finalizado" al usuario, vaya a \n  la pantalla de informaci\u00F3n para la entrada llamada "message" y cambie la opci\u00F3n De lo contrario\n  de Preguntar al usuario a Usar constante.  Introduzca el texto "Finalizado" en el\n  campo Valor de constante.\n\n  Las referencias a las variables de flujo en el campo Valor de constante se ampl\u00EDan\n  que el texto pueda ser din\u00E1mico.  Las referencias de variables de flujo tienen\n  ${variable}.  Por ejemplo, el texto\:\n     ${count} sistemas se han modificado \n  se podr\u00EDa usar para mostrar un mensaje sobre el n\u00FAmero de sistemas que se hayan\n  reparado, cuyo valor se encuentra en la variable de flujo "recuento".\n\n  Cuando aparece el mensaje, se procesar\u00E1 adecuadamente cualquier etiqueta\n  html incrustada, que permite crear mensajes con un formato m\u00E1s avanzado.  Por \n  ejemplo, para mostrar un mensaje en cursiva, puede utilizar\:\n    <i>Esto es importante</i>\n  o para mostrar un mensaje en rojo\:\n    <i>Esto es <span style\="color\: red">realmente </span> importante</i>\n\n  Puede crear mensajes que contengan m\u00FAltiples l\u00EDneas introduciendo un mensaje\n  de varias l\u00EDneas en el campo Valor de constante, o utilizando las etiquetas <BR> HTML para saltos\n  de l\u00EDnea.  Tenga en cuenta que los caracteres \\n se muestran literalmente y no se usan para\n  crear m\u00FAltiples l\u00EDneas.\n\n</pre>\n
+]]></descriptionCdata>
+  <annotation></annotation>
+  <name>Filter XML</name>
+  <categories/>
+  <inputs/>
+  <possibleResponses>
+    <opResponse id="abe552ae-a0e9-476d-9661-93dd26a5136f">
+      <annotation></annotation>
+      <name>success</name>
+      <isDefault>true</isDefault>
+      <onFailure>false</onFailure>
+      <type>RESOLVED</type>
+      <matchRules/>
+    </opResponse>
+  </possibleResponses>
+  <availableResultExpressions/>
+  <resultExpression id="98c75060-f09e-45d8-a6fd-26b835aa13f8">
+    <annotation></annotation>
+    <name>FailureMessage</name>
+    <fieldName>FailureMessage</fieldName>
+    <sourceType>RAWRESULT</sourceType>
+    <filters/>
+  </resultExpression>
+  <iconSpec id="1add54ba-5b47-4782-8d74-416b437a1a64">
+    <baseIcon>flow.png</baseIcon>
+    <basePath>System</basePath>
+    <readOnly>false</readOnly>
+    <layers/>
+  </iconSpec>
+  <callouts/>
+  <checkPointFlow>true</checkPointFlow>
+  <compatibleRuntimeContext>false</compatibleRuntimeContext>
+  <historyCheckPointFlow>true</historyCheckPointFlow>
+  <steps>
+    <step id="2c4a6760-42e0-4df6-98a0-39a466830bc5">
+      <annotation>35f03d7e-5f44-4cab-b5eb-f6dfc5948ead.2c4a6760-42e0-4df6-98a0-39a466830bc5.description</annotation>
+      <name>xmlDocument</name>
+      <bounds>
+        <x>338.0</x>
+        <y>141.0</y>
+      </bounds>
+      <layer>-1</layer>
+      <hideInbound>false</hideInbound>
+      <addResultToRunContext>false</addResultToRunContext>
+      <isCriticalStep>false</isCriticalStep>
+      <isNonBlocking>false</isNonBlocking>
+      <isParallelStep>false</isParallelStep>
+      <isSingleResponse>false</isSingleResponse>
+      <recordInHistory>false</recordInHistory>
+      <recordRawOutput>true</recordRawOutput>
+      <recordPrimaryOutput>true</recordPrimaryOutput>
+      <checkPointStep>true</checkPointStep>
+      <historyCheckPointStep>true</historyCheckPointStep>
+      <scriptResultStep>false</scriptResultStep>
+      <userPrompt></userPrompt>
+      <bindings>
+        <staticBinding id="149ee5cb-0ba9-49d7-be16-2c4b02d8dd94">
+          <annotation></annotation>
+          <assignFromContext>false</assignFromContext>
+          <assignToContext>true</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>false</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>xmlDocument</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;?&gt;
+&lt;CATALOG&gt;
+    &lt;PLANT version=&quot;3.5&quot;&gt;
+        &lt;COMMON&gt;Bloodroot&lt;/COMMON&gt;
+        &lt;BOTANICAL&gt;Sanguinaria canadensis&lt;/BOTANICAL&gt;
+        &lt;ZONE&gt;4&lt;/ZONE&gt;
+        &lt;LIGHT&gt;Mostly Shady&lt;/LIGHT&gt;
+        &lt;PRICE&gt;$2.44&lt;/PRICE&gt;
+        &lt;AVAILABILITY&gt;031599&lt;/AVAILABILITY&gt;
+    &lt;/PLANT&gt;
+    &lt;PLANT&gt;
+        &lt;COMMON&gt;Columbine&lt;/COMMON&gt;
+        &lt;BOTANICAL&gt;Aquilegia canadensis&lt;/BOTANICAL&gt;
+        &lt;ZONE&gt;3&lt;/ZONE&gt;
+        &lt;LIGHT&gt;Mostly Shady&lt;/LIGHT&gt;
+        &lt;PRICE&gt;$9.37&lt;/PRICE&gt;
+        &lt;AVAILABILITY&gt;030699&lt;/AVAILABILITY&gt;
+    &lt;/PLANT&gt;
+    &lt;PLANT&gt;
+        &lt;COMMON&gt;Marsh Marigold&lt;/COMMON&gt;
+        &lt;BOTANICAL&gt;Caltha palustris&lt;/BOTANICAL&gt;
+        &lt;ZONE&gt;4&lt;/ZONE&gt;
+        &lt;LIGHT&gt;Mostly Sunny&lt;/LIGHT&gt;
+        &lt;PRICE&gt;$6.81&lt;/PRICE&gt;
+        &lt;AVAILABILITY&gt;051799&lt;/AVAILABILITY&gt;
+    &lt;/PLANT&gt;
+    &lt;PLANT&gt;
+        &lt;COMMON&gt;Cowslip&lt;/COMMON&gt;
+        &lt;BOTANICAL&gt;Caltha palustris&lt;/BOTANICAL&gt;
+        &lt;ZONE&gt;4&lt;/ZONE&gt;
+        &lt;LIGHT&gt;Mostly Shady&lt;/LIGHT&gt;
+        &lt;PRICE&gt;$9.90&lt;/PRICE&gt;
+        &lt;AVAILABILITY&gt;030699&lt;/AVAILABILITY&gt;
+    &lt;/PLANT&gt;
+&lt;/CATALOG&gt;
+</value>
+          <record>false</record>
+        </staticBinding>
+      </bindings>
+      <transitions>
+        <transition id="5d4e044d-8ff1-41b4-b9e2-f3829e03e09e">
+          <annotation></annotation>
+          <name>success</name>
+          <command>NEXT</command>
+          <linkMode>false</linkMode>
+          <responseSymbol>success</responseSymbol>
+          <shouldHandoff>false</shouldHandoff>
+          <transitionValue>0.0</transitionValue>
+          <destination>
+            <refId>ce13f411-08db-47a2-93d7-3bebe9c1149b</refId>
+          </destination>
+          <source>
+            <refId>2c4a6760-42e0-4df6-98a0-39a466830bc5</refId>
+          </source>
+          <positions>
+            <point>
+              <x>388.0</x>
+              <y>175.0</y>
+            </point>
+            <point>
+              <x>647.0</x>
+              <y>175.0</y>
+            </point>
+          </positions>
+          <labelPosition>
+            <x>333.0</x>
+            <y>0.0</y>
+          </labelPosition>
+        </transition>
+      </transitions>
+      <properties/>
+      <opRef>
+        <refId>ddd79f22-8b1e-4605-88d5-d912bb2da2b9</refId>
+      </opRef>
+      <assignments>
+        <flowVariableAssignment id="8aca8f61-93fe-4679-88d8-cf7792b06091">
+          <annotation></annotation>
+          <name>assignment</name>
+          <action>OVERWRITE</action>
+          <assignmentTargetType>FLOW_VARIABLE</assignmentTargetType>
+          <contextKey>filteredDoc</contextKey>
+          <expression id="8045f4b2-3ea7-40a8-af7f-5913e00e0714">
+            <annotation></annotation>
+            <name>Entrada: xmlDocument</name>
+            <fieldName>xmlDocument</fieldName>
+            <sourceType>INPUT</sourceType>
+            <filters>
+              <xpathFilter id="cf49731f-09b0-4ada-91b4-93db8ae13e9d">
+                <annotation></annotation>
+                <name>Consulta XPath</name>
+                <xpathQuery>/CATALOG/PLANT/COMMON</xpathQuery>
+              </xpathFilter>
+            </filters>
+          </expression>
+        </flowVariableAssignment>
+      </assignments>
+      <throttleSize>0</throttleSize>
+    </step>
+    <step id="ce13f411-08db-47a2-93d7-3bebe9c1149b">
+      <annotation>35f03d7e-5f44-4cab-b5eb-f6dfc5948ead.ce13f411-08db-47a2-93d7-3bebe9c1149b.description</annotation>
+      <name>Display Filtered XML</name>
+      <bounds>
+        <x>597.0</x>
+        <y>141.0</y>
+      </bounds>
+      <layer>-1</layer>
+      <hideInbound>false</hideInbound>
+      <addResultToRunContext>false</addResultToRunContext>
+      <isCriticalStep>false</isCriticalStep>
+      <isNonBlocking>false</isNonBlocking>
+      <isParallelStep>false</isParallelStep>
+      <isSingleResponse>false</isSingleResponse>
+      <recordInHistory>false</recordInHistory>
+      <recordRawOutput>true</recordRawOutput>
+      <recordPrimaryOutput>true</recordPrimaryOutput>
+      <checkPointStep>true</checkPointStep>
+      <historyCheckPointStep>true</historyCheckPointStep>
+      <scriptResultStep>false</scriptResultStep>
+      <userPrompt></userPrompt>
+      <bindings>
+        <staticBinding id="c7cd75e4-e05d-4589-ae32-ffca22f12b5f">
+          <annotation></annotation>
+          <fromContextKey>filteredDoc</fromContextKey>
+          <assignFromContext>true</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>true</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>message</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <value></value>
+          <record>false</record>
+        </staticBinding>
+        <staticBinding id="c3dafb75-0eaf-45d6-9cc1-e30ab0fced09">
+          <annotation></annotation>
+          <assignFromContext>false</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>false</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>title</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <value>Status message</value>
+          <record>false</record>
+        </staticBinding>
+      </bindings>
+      <transitions>
+        <transition id="00ba8973-d180-4532-abe2-5c4c6ea525e8">
+          <annotation></annotation>
+          <name>success</name>
+          <command>NEXT</command>
+          <linkMode>false</linkMode>
+          <responseSymbol>success</responseSymbol>
+          <shouldHandoff>false</shouldHandoff>
+          <transitionValue>0.0</transitionValue>
+          <destination>
+            <refId>37e1abe6-b372-4354-b96f-2032f546ef5f</refId>
+          </destination>
+          <source>
+            <refId>ce13f411-08db-47a2-93d7-3bebe9c1149b</refId>
+          </source>
+          <positions>
+            <point>
+              <x>647.0</x>
+              <y>175.0</y>
+            </point>
+            <point>
+              <x>895.0</x>
+              <y>175.0</y>
+            </point>
+          </positions>
+          <labelPosition>
+            <x>333.0</x>
+            <y>0.0</y>
+          </labelPosition>
+        </transition>
+      </transitions>
+      <properties/>
+      <opRef>
+        <refId>434e6fa2-26bc-4e84-9e1f-0aa6946cf920</refId>
+      </opRef>
+      <assignments/>
+      <throttleSize>0</throttleSize>
+    </step>
+    <returnStep id="37e1abe6-b372-4354-b96f-2032f546ef5f">
+      <annotation></annotation>
+      <name>Resuelto : success</name>
+      <bounds>
+        <x>845.0</x>
+        <y>141.0</y>
+      </bounds>
+      <layer>-1</layer>
+      <hideInbound>false</hideInbound>
+      <addResultToRunContext>false</addResultToRunContext>
+      <isCriticalStep>false</isCriticalStep>
+      <isNonBlocking>false</isNonBlocking>
+      <isParallelStep>false</isParallelStep>
+      <isSingleResponse>false</isSingleResponse>
+      <recordInHistory>false</recordInHistory>
+      <recordRawOutput>true</recordRawOutput>
+      <recordPrimaryOutput>true</recordPrimaryOutput>
+      <checkPointStep>true</checkPointStep>
+      <historyCheckPointStep>true</historyCheckPointStep>
+      <scriptResultStep>false</scriptResultStep>
+      <userPrompt></userPrompt>
+      <bindings/>
+      <transitions>
+        <transition id="fea5fa61-8280-4cec-a73f-67f899b88525">
+          <annotation></annotation>
+          <name>return</name>
+          <command>NEXT</command>
+          <linkMode>false</linkMode>
+          <responseSymbol>success</responseSymbol>
+          <shouldHandoff>false</shouldHandoff>
+          <transitionValue>0.0</transitionValue>
+          <destination>
+            <refId>37e1abe6-b372-4354-b96f-2032f546ef5f</refId>
+          </destination>
+          <source>
+            <refId>37e1abe6-b372-4354-b96f-2032f546ef5f</refId>
+          </source>
+          <positions/>
+        </transition>
+      </transitions>
+      <properties/>
+      <returnStepType>RESOLVED</returnStepType>
+      <assignments/>
+    </returnStep>
+  </steps>
+  <startSteps>2c4a6760-42e0-4df6-98a0-39a466830bc5</startSteps>
+</flow>
