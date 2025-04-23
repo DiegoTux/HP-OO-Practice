@@ -5,7 +5,7 @@
 53bc3f27-dccc-49bb-9d55-c7773f34bcfe.bef6ac11-1e36-4854-ae2d-9818b6505e31.description=<pre>Esta operaci\u00F3n realiza una transformaci\u00F3n XSL en un RAS para transformar un documento XML en HTML. Los par\u00E1metros de tiempo de ejecuci\u00F3n se pueden especificar con las entradas "paramKey" y "paramValue".\n\nEntradas\:\n    templateLocation - La ubicaci\u00F3n de la hoja de estilos XSL que se debe utilizar. Puede ser una ruta de archivo local, una URL de HTTP o la plantilla real como constante.\n    xmlLocation - La ubicaci\u00F3n del documento XML que se debe transformar. Puede ser una ruta de archivo local, una URL de HTTP o el documento XML real que se va a transformar, como constante. Es opcional porque algunas hojas de estilo no necesitan un documento XML y pueden crear una salida seg\u00FAn los par\u00E1metros de tiempo de ejecuci\u00F3n.\n    outputFile - El archivo local donde escribir la salida de la transformaci\u00F3n. Si no se especifica ning\u00FAn archivo de salida, se devolver\u00E1 la salida de la transformaci\u00F3n como returnResult.\n    paramKey - Una lista de nombres de par\u00E1metro delimitada por "paramDelimiter".\n    paramValue - Una lista de valores de par\u00E1metro delimitada por "paramDelimiter".\n    paramDelimiter - El delimitador de lista para las entradas "paramKey" y "paramValue".\nValor predeterminado\: ','\n    parsingFeatures - La lista de funciones de an\u00E1lisis XML separadas por nueva l\u00EDnea (CRLF). El nombre - valor de fa funci\u00F3n debe estar separado por espacios en blanco. La configuraci\u00F3n de funciones espec\u00EDficas en este capo puede ser de utilidad para evitar problemas de seguridad XML del tipo -  "XML Entity Expansion injection" y "XML External Entity injection". Para evitar problemas de seguridad como los mencionados anteriormente se recomienda configurar esta entrada con los valores siguientes\: \nhttp\://apache.org/xml/features/disallow-doctype-decl true \nhttp\://xml.org/sax/features/external-general-entities false \nhttp\://xml.org/sax/features/external-parameter-entities false \nSi la funci\u00F3n "http\://apache.org/xml/features/disallow-doctype-decl" se establece en "true" el analizador devolver\u00E1 un ERROR GRAVE si el documento entrante contiene una declaraci\u00F3n DOCTYPE.  \nSi la funci\u00F3n "http\://xml.org/sax/features/external-general-entities" se establece en "false", el analizador no incluir\u00E1 las entidades generales externas. \nSi la funci\u00F3n "http\://xml.org/sax/features/external-parameter-entities" se establece en "false" el analizador no incluir\u00E1 las entidades de par\u00E1metros externas ni los subconjuntos DTD externos. \nSi las validaciones devuelven error, la operaci\u00F3n devolver\u00E1 un mensaje de error describiendo el problema. \nValor predeterminado \:\nhttp\://apache.org/xml/features/disallow-doctype-decl true\nhttp\://xml.org/sax/features/external-general-entities false\nhttp\://xml.org/sax/features/external-parameter-entities false\n\nResultados\:\n    returnResult - La salida de la transformaci\u00F3n, si no se especifica un archivo de salida.\n\nRespuestas\:\n    success - La transformaci\u00F3n XSL se ha realizado correctamente.\n    failure - Error en la transformaci\u00F3n XSL. Consulte "returnResult" para consultar los motivos.\n\nNotas\:\n\nEspecificaci\u00F3n de par\u00E1metros\:\nSi se debe especificar m\u00E1s de un par\u00E1metro para una transformaci\u00F3n, rellene "paramKey" con una lista de nombres de par\u00E1metro y "paramValue" con los valores de par\u00E1metro correspondientes.  A continuaci\u00F3n se muestra un ejemplo de hoja de estilos simple con los par\u00E1metros "firstName", "lastName" y "color" (no transforma un documento XML)\:\n\n<?xml version\="1.0" encoding\="UTF-8"?>\n<xsl\:stylesheet version\="1.0" xmlns\:xsl\="http\://www.w3.org/1999/XSL/Transform">\n    <xsl\:param name\="firstName">OO</xsl\:param>\n    <xsl\:param name\="lastName">User</xsl\:param>\n    <xsl\:param name\="color">\#000000</xsl\:param>\n    <xsl\:template match\="/">\n        <html>\n            <body>\n                <h2>\n                    <font color\="{$color}">\n                    Hello <xsl\:value-of select\="$firstName"/><xsl\:text> </xsl\:text><xsl\:value-of select\="$lastName"/>\!\n                    </font>\n                </h2>\n            </body>\t\t\n        </html>\n    </xsl\:template>\n</xsl\:stylesheet>\n\nDe forma predeterminada (sin par\u00E1metros especificados), este ejemplo crear\u00E1 un documento HTML con el texto "Hello OO User\!" en negro.  \n\nCuando se aplican las siguientes entradas "paramKey" y "paramValue"\:\n\nparamKey\=firstName,lastName,color\nparamValue\=Valued,Customer,blue\nparamDelimiter\=,\n\nla salida es un documento HTML con el texto \: "Hello Valued Customer\!" en azul.\n</pre>
 ]]></descriptionCdata>
   <annotation></annotation>
-  <name>XSL Transformation v2</name>
+  <name>XSL Transformation</name>
   <categories/>
   <inputs/>
   <possibleResponses>
@@ -62,6 +62,19 @@
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
+      <iconSpec id="c4093866-a702-4d02-83b1-53b41e963699">
+        <baseIcon>document_xml.png</baseIcon>
+        <basePath>Databases/</basePath>
+        <readOnly>false</readOnly>
+        <layers>
+          <iconSpec id="83847c0f-a07b-4a04-b603-55e0c1d3b61f">
+            <baseIcon>check.png</baseIcon>
+            <basePath>Annotations/</basePath>
+            <readOnly>false</readOnly>
+            <layers/>
+          </iconSpec>
+        </layers>
+      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>
@@ -399,6 +412,12 @@ http://xml.org/sax/features/external-parameter-entities false</value>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
+      <iconSpec id="aafa1b50-06d6-465f-9b04-b1f54b88c602">
+        <baseIcon>return_success.png</baseIcon>
+        <basePath>System</basePath>
+        <readOnly>true</readOnly>
+        <layers/>
+      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>true</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>
@@ -541,6 +560,19 @@ http://xml.org/sax/features/external-parameter-entities false</value>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
+      <iconSpec id="77edb224-9408-4e63-ae15-942cd0b7f8a3">
+        <baseIcon>document_xml.png</baseIcon>
+        <basePath>/Operating System/</basePath>
+        <readOnly>false</readOnly>
+        <layers>
+          <iconSpec id="109f3fd3-e297-47b7-a341-e927ee6e9beb">
+            <baseIcon>gear.png</baseIcon>
+            <basePath>/Annotations/</basePath>
+            <readOnly>false</readOnly>
+            <layers/>
+          </iconSpec>
+        </layers>
+      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>
