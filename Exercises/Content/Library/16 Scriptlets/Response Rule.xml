@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow id="c6ee128b-258e-4b6c-a2b8-db01f27c7d82">
+  <descriptionCdata><![CDATA[c6ee128b-258e-4b6c-a2b8-db01f27c7d82.6042ad0f-951b-41ba-8df0-f0bc0e826610.description=<pre>This is an operation that does nothing. It can be used to\nselect the response as per user input by pre-defined rules.\n\nInputs\:\nfield1 - optional input that is used for filtering flow\nvariables\n\nResponses\:\n192 Network\n172 Network\nOther Network\n</pre>
+c6ee128b-258e-4b6c-a2b8-db01f27c7d82.b982619e-1044-489a-9a29-1ccf2a4327b9.transition.description=This is the 172 Network
+c6ee128b-258e-4b6c-a2b8-db01f27c7d82.e92ed1f6-ed6d-48e0-92d8-31eabc499b97.transition.description=This is the 192 Network
+]]></descriptionCdata>
+  <annotation></annotation>
+  <name>Response Rule</name>
+  <categories/>
+  <inputs/>
+  <possibleResponses>
+    <opResponse id="8f30ab50-497c-4d6b-a1e2-b97df492594b">
+      <annotation></annotation>
+      <name>unknown</name>
+      <isDefault>false</isDefault>
+      <onFailure>false</onFailure>
+      <type>NO_ACTION_TAKEN</type>
+      <matchRules/>
+    </opResponse>
+    <opResponse id="98e8d79a-9ca9-4e08-89a7-116ff4c1b177">
+      <annotation></annotation>
+      <name>diagnosed</name>
+      <isDefault>false</isDefault>
+      <onFailure>false</onFailure>
+      <type>DIAGNOSED</type>
+      <matchRules/>
+    </opResponse>
+  </possibleResponses>
+  <availableResultExpressions/>
+  <resultExpression id="b92758ba-f61e-41b1-bf24-7e3c6d75c21d">
+    <annotation></annotation>
+    <name>FailureMessage</name>
+    <fieldName>FailureMessage</fieldName>
+    <sourceType>RAWRESULT</sourceType>
+    <filters/>
+  </resultExpression>
+  <iconSpec id="1788acb0-2172-4616-a627-ddca8667eb7a">
+    <baseIcon>flow.png</baseIcon>
+    <basePath>System</basePath>
+    <readOnly>false</readOnly>
+    <layers/>
+  </iconSpec>
+  <callouts/>
+  <checkPointFlow>true</checkPointFlow>
+  <compatibleRuntimeContext>false</compatibleRuntimeContext>
+  <historyCheckPointFlow>true</historyCheckPointFlow>
+  <steps>
+    <step id="6042ad0f-951b-41ba-8df0-f0bc0e826610">
+      <annotation>c6ee128b-258e-4b6c-a2b8-db01f27c7d82.6042ad0f-951b-41ba-8df0-f0bc0e826610.description</annotation>
+      <name>Select Network</name>
+      <bounds>
+        <x>477.0</x>
+        <y>156.0</y>
+      </bounds>
+      <layer>-1</layer>
+      <hideInbound>false</hideInbound>
+      <addResultToRunContext>false</addResultToRunContext>
+      <isCriticalStep>false</isCriticalStep>
+      <isNonBlocking>false</isNonBlocking>
+      <isParallelStep>false</isParallelStep>
+      <isSingleResponse>false</isSingleResponse>
+      <recordInHistory>false</recordInHistory>
+      <recordRawOutput>true</recordRawOutput>
+      <recordPrimaryOutput>true</recordPrimaryOutput>
+      <checkPointStep>true</checkPointStep>
+      <historyCheckPointStep>true</historyCheckPointStep>
+      <scriptResultStep>false</scriptResultStep>
+      <userPrompt></userPrompt>
+      <bindings>
+        <userInputBinding id="3686d061-4cb7-47e4-8860-3efa4bcc8685">
+          <annotation></annotation>
+          <assignFromContext>false</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>false</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>Field_1</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <record>false</record>
+          <prompt></prompt>
+          <isMultiSelect>false</isMultiSelect>
+          <sourceDelimiter>|</sourceDelimiter>
+        </userInputBinding>
+      </bindings>
+      <transitions>
+        <transition id="e92ed1f6-ed6d-48e0-92d8-31eabc499b97">
+          <annotation>c6ee128b-258e-4b6c-a2b8-db01f27c7d82.e92ed1f6-ed6d-48e0-92d8-31eabc499b97.transition.description</annotation>
+          <name>192 Network</name>
+          <command>NEXT</command>
+          <linkMode>false</linkMode>
+          <responseSymbol>192 Network</responseSymbol>
+          <shouldHandoff>false</shouldHandoff>
+          <transitionValue>0.0</transitionValue>
+          <destination>
+            <refId>bf60a64b-bbe5-4a02-84e4-698b1574894b</refId>
+          </destination>
+          <source>
+            <refId>6042ad0f-951b-41ba-8df0-f0bc0e826610</refId>
+          </source>
+          <positions>
+            <point>
+              <x>527.0</x>
+              <y>190.0</y>
+            </point>
+            <point>
+              <x>744.0</x>
+              <y>52.0</y>
+            </point>
+          </positions>
+          <labelPosition>
+            <x>333.0</x>
+            <y>0.0</y>
+          </labelPosition>
+        </transition>
+        <transition id="b982619e-1044-489a-9a29-1ccf2a4327b9">
+          <annotation>c6ee128b-258e-4b6c-a2b8-db01f27c7d82.b982619e-1044-489a-9a29-1ccf2a4327b9.transition.description</annotation>
+          <name>172 Network</name>
+          <command>NEXT</command>
+          <linkMode>false</linkMode>
+          <responseSymbol>172 Network</responseSymbol>
+          <shouldHandoff>false</shouldHandoff>
+          <transitionValue>0.0</transitionValue>
+          <destination>
+            <refId>93174446-d7b4-49eb-b336-603742bf5b45</refId>
+          </destination>
+          <source>
+            <refId>6042ad0f-951b-41ba-8df0-f0bc0e826610</refId>
+          </source>
+          <positions>
+            <point>
+              <x>527.0</x>
+              <y>190.0</y>
+            </point>
+            <point>
+              <x>747.0</x>
+              <y>181.0</y>
+            </point>
+          </positions>
+          <labelPosition>
+            <x>333.0</x>
+            <y>0.0</y>
+          </labelPosition>
+        </transition>
+        <transition id="f9864726-d0e3-4281-bf52-be44c82b4d5d">
+          <annotation></annotation>
+          <name>Other network</name>
+          <command>NEXT</command>
+          <linkMode>false</linkMode>
+          <responseSymbol>Other network</responseSymbol>
+          <shouldHandoff>false</shouldHandoff>
+          <transitionValue>0.0</transitionValue>
+          <destination>
+            <refId>532871e3-7667-4d40-ad79-bfb3af76b1da</refId>
+          </destination>
+          <source>
+            <refId>6042ad0f-951b-41ba-8df0-f0bc0e826610</refId>
+          </source>
+          <positions>
+            <point>
+              <x>527.0</x>
+              <y>190.0</y>
+            </point>
+            <point>
+              <x>750.0</x>
+              <y>340.0</y>
+            </point>
+          </positions>
+          <labelPosition>
+            <x>333.0</x>
+            <y>0.0</y>
+          </labelPosition>
+        </transition>
+      </transitions>
+      <properties/>
+      <opRef>
+        <refId>5ffef6c5-2c6c-4041-b71b-c8b925507ae1</refId>
+      </opRef>
+      <assignments/>
+      <throttleSize>0</throttleSize>
+    </step>
+    <returnStep id="532871e3-7667-4d40-ad79-bfb3af76b1da">
+      <annotation></annotation>
+      <name>No se ha realizado ninguna acci&#243;n : unknown</name>
+      <bounds>
+        <x>694.0</x>
+        <y>306.0</y>
+      </bounds>
+      <layer>-1</layer>
+      <hideInbound>false</hideInbound>
+      <addResultToRunContext>false</addResultToRunContext>
+      <isCriticalStep>false</isCriticalStep>
+      <isNonBlocking>false</isNonBlocking>
+      <isParallelStep>false</isParallelStep>
+      <isSingleResponse>false</isSingleResponse>
+      <recordInHistory>false</recordInHistory>
+      <recordRawOutput>true</recordRawOutput>
+      <recordPrimaryOutput>true</recordPrimaryOutput>
+      <checkPointStep>true</checkPointStep>
+      <historyCheckPointStep>true</historyCheckPointStep>
+      <scriptResultStep>false</scriptResultStep>
+      <userPrompt></userPrompt>
+      <bindings/>
+      <transitions>
+        <transition id="0be8cfff-9f12-4b48-b67f-93294574e956">
+          <annotation></annotation>
+          <name>return</name>
+          <command>NEXT</command>
+          <linkMode>false</linkMode>
+          <responseSymbol>unknown</responseSymbol>
+          <shouldHandoff>false</shouldHandoff>
+          <transitionValue>0.0</transitionValue>
+          <destination>
+            <refId>532871e3-7667-4d40-ad79-bfb3af76b1da</refId>
+          </destination>
+          <source>
+            <refId>532871e3-7667-4d40-ad79-bfb3af76b1da</refId>
+          </source>
+          <positions/>
+        </transition>
+      </transitions>
+      <properties/>
+      <returnStepType>NO_ACTION_TAKEN</returnStepType>
+      <assignments/>
+    </returnStep>
+    <returnStep id="93174446-d7b4-49eb-b336-603742bf5b45">
+      <annotation></annotation>
+      <name>Diagnosticado : diagnosed</name>
+      <bounds>
+        <x>694.0</x>
+        <y>156.0</y>
+      </bounds>
+      <layer>-1</layer>
+      <hideInbound>false</hideInbound>
+      <addResultToRunContext>false</addResultToRunContext>
+      <isCriticalStep>false</isCriticalStep>
+      <isNonBlocking>false</isNonBlocking>
+      <isParallelStep>false</isParallelStep>
+      <isSingleResponse>false</isSingleResponse>
+      <recordInHistory>false</recordInHistory>
+      <recordRawOutput>true</recordRawOutput>
+      <recordPrimaryOutput>true</recordPrimaryOutput>
+      <checkPointStep>true</checkPointStep>
+      <historyCheckPointStep>true</historyCheckPointStep>
+      <scriptResultStep>false</scriptResultStep>
+      <userPrompt></userPrompt>
+      <bindings/>
+      <transitions>
+        <transition id="50d02694-051c-4ae3-bf67-377195846f3d">
+          <annotation></annotation>
+          <name>return</name>
+          <command>NEXT</command>
+          <linkMode>false</linkMode>
+          <responseSymbol>diagnosed</responseSymbol>
+          <shouldHandoff>false</shouldHandoff>
+          <transitionValue>0.0</transitionValue>
+          <destination>
+            <refId>93174446-d7b4-49eb-b336-603742bf5b45</refId>
+          </destination>
+          <source>
+            <refId>93174446-d7b4-49eb-b336-603742bf5b45</refId>
+          </source>
+          <positions/>
+        </transition>
+      </transitions>
+      <properties/>
+      <returnStepType>DIAGNOSED</returnStepType>
+      <assignments/>
+    </returnStep>
+    <returnStep id="bf60a64b-bbe5-4a02-84e4-698b1574894b">
+      <annotation></annotation>
+      <name>Diagnosticado : diagnosed</name>
+      <bounds>
+        <x>694.0</x>
+        <y>18.0</y>
+      </bounds>
+      <layer>-1</layer>
+      <hideInbound>false</hideInbound>
+      <addResultToRunContext>false</addResultToRunContext>
+      <isCriticalStep>false</isCriticalStep>
+      <isNonBlocking>false</isNonBlocking>
+      <isParallelStep>false</isParallelStep>
+      <isSingleResponse>false</isSingleResponse>
+      <recordInHistory>false</recordInHistory>
+      <recordRawOutput>true</recordRawOutput>
+      <recordPrimaryOutput>true</recordPrimaryOutput>
+      <checkPointStep>true</checkPointStep>
+      <historyCheckPointStep>true</historyCheckPointStep>
+      <scriptResultStep>false</scriptResultStep>
+      <userPrompt></userPrompt>
+      <bindings/>
+      <transitions>
+        <transition id="96092feb-0e9f-4a27-a899-2748252b4547">
+          <annotation></annotation>
+          <name>return</name>
+          <command>NEXT</command>
+          <linkMode>false</linkMode>
+          <responseSymbol>diagnosed</responseSymbol>
+          <shouldHandoff>false</shouldHandoff>
+          <transitionValue>0.0</transitionValue>
+          <destination>
+            <refId>bf60a64b-bbe5-4a02-84e4-698b1574894b</refId>
+          </destination>
+          <source>
+            <refId>bf60a64b-bbe5-4a02-84e4-698b1574894b</refId>
+          </source>
+          <positions/>
+        </transition>
+      </transitions>
+      <properties/>
+      <returnStepType>DIAGNOSED</returnStepType>
+      <assignments/>
+    </returnStep>
+  </steps>
+  <startSteps>6042ad0f-951b-41ba-8df0-f0bc0e826610</startSteps>
+</flow>

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<operation id="5ffef6c5-2c6c-4041-b71b-c8b925507ae1">
+  <descriptionCdata><![CDATA[5ffef6c5-2c6c-4041-b71b-c8b925507ae1.description=<pre>This is an operation that does nothing. It can be used to\nselect the response as per user input by pre-defined rules.\n\nInputs\:\nfield1 - optional input that is used for filtering flow\nvariables\n\nResponses\:\n192 Network\n172 Network\nOther Network\n</pre>
+]]></descriptionCdata>
+  <annotation>5ffef6c5-2c6c-4041-b71b-c8b925507ae1.description</annotation>
+  <name>Select Network</name>
+  <categories/>
+  <inputs>
+    <userInputBinding id="9ce383ae-bf2d-4de6-951e-0c995e71c12d">
+      <annotation></annotation>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>false</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>Field_1</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <record>false</record>
+      <prompt></prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
+  </inputs>
+  <possibleResponses>
+    <opResponse id="35cdf39e-9b8e-4f31-b48e-29326217b0ec">
+      <annotation></annotation>
+      <name>192 Network</name>
+      <isDefault>false</isDefault>
+      <onFailure>false</onFailure>
+      <type>DIAGNOSED</type>
+      <matchRules>
+        <expression id="8a995c20-b62c-4415-970d-1b27da778c91">
+          <annotation></annotation>
+          <name>Field_1</name>
+          <fieldName>Field_1</fieldName>
+          <sourceType>RAWRESULT</sourceType>
+          <scriptletEvaluator id="edcdc86a-612b-46e7-acbd-c46e564b860b">
+            <annotation></annotation>
+            <name>Config Item</name>
+            <scriptlet id="c07db082-54d9-4c88-b02c-1c31cfca47f8">
+              <annotation></annotation>
+              <name>EvaluatorScriptlet</name>
+              <script>if(scriptletInput.length &gt;0) {
+	if (scriptletInput.substring(0,3) == &quot;192&quot;) matchRanges.setMatches(true);
+}
+matchRanges.addRange(0,ScriptletInput.length);</script>
+              <type>RHINO</type>
+            </scriptlet>
+          </scriptletEvaluator>
+          <filters/>
+        </expression>
+      </matchRules>
+    </opResponse>
+    <opResponse id="bf3a8c85-5b0a-48ec-a35c-4a30b484cc47">
+      <annotation></annotation>
+      <name>172 Network</name>
+      <isDefault>false</isDefault>
+      <onFailure>false</onFailure>
+      <type>DIAGNOSED</type>
+      <matchRules>
+        <expression id="9a305ae3-2992-4393-9ec6-0ac087342fb9">
+          <annotation></annotation>
+          <name>Field_1</name>
+          <fieldName>Field_1</fieldName>
+          <sourceType>RAWRESULT</sourceType>
+          <scriptletEvaluator id="6d8865fb-747e-431e-9c0a-59a587891fa3">
+            <annotation></annotation>
+            <name>Config Item</name>
+            <scriptlet id="e2603607-e3a8-43f7-b1b7-5984886badf7">
+              <annotation></annotation>
+              <name>EvaluatorScriptlet</name>
+              <script>if(scriptletInput.length &gt;0) {
+	if (scriptletInput.substring(0,3) == &quot;172&quot;) matchRanges.setMatches(true);
+}
+matchRanges.addRange(0,ScriptletInput.length);</script>
+              <type>RHINO</type>
+            </scriptlet>
+          </scriptletEvaluator>
+          <filters/>
+        </expression>
+      </matchRules>
+    </opResponse>
+    <opResponse id="786e56a2-c92b-448c-93bc-18f44d6dc805">
+      <annotation></annotation>
+      <name>Other network</name>
+      <isDefault>true</isDefault>
+      <onFailure>true</onFailure>
+      <type>NO_ACTION_TAKEN</type>
+      <matchRules/>
+    </opResponse>
+  </possibleResponses>
+  <availableResultExpressions/>
+  <resultExpression id="514af0fe-35ea-46dd-b3e0-260c03ee746f">
+    <annotation></annotation>
+    <name>Field_1</name>
+    <fieldName>Field_1</fieldName>
+    <sourceType>RAWRESULT</sourceType>
+    <filters/>
+  </resultExpression>
+  <iconSpec id="8ea8d97a-44fd-4554-ab8e-0223e764d070">
+    <baseIcon>branch_element.png</baseIcon>
+    <basePath>/Others/</basePath>
+    <readOnly>false</readOnly>
+    <layers/>
+  </iconSpec>
+  <plugin>
+    <groupId>com.hp.oo</groupId>
+    <artifactId>oo-base-plugin</artifactId>
+    <version>1.23.8</version>
+    <actionName>noOp</actionName>
+  </plugin>
+  <fieldValues/>
+</operation>

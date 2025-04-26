@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scriptlet id="7d567015-e123-4d44-b208-69afdd068f46">
+  <descriptionCdata><![CDATA[]]></descriptionCdata>
+  <annotation></annotation>
+  <name>Step Convert in Flow Saving Scriptlets (b62911c3-cc52-4e41-8609-f0e8bcc38d55)</name>
+  <script>//scripletInput = 26000000;
+if (scriptletInput.length == 0) scriptletResult = 0
+else 
+scriptletResult = java.land.Math.round(java.lang.Double.parseDouble(scriptletInput)/1024)
+scriptletContext.put(&quot;scriptletResult&quot;,scriptletResult);</script>
+  <type>NASHORN</type>
+</scriptlet>

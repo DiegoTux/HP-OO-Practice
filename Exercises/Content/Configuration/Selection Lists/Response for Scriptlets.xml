@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<selectionList id="5a82e7a0-71ba-4aeb-b226-389dc0b48703">
+  <descriptionCdata><![CDATA[]]></descriptionCdata>
+  <annotation></annotation>
+  <name>Response for Scriptlets</name>
+  <storage>
+    <string>Success</string>
+    <string>Failure</string>
+    <string>Diagnosed</string>
+    <string>No Action</string>
+  </storage>
+</selectionList>

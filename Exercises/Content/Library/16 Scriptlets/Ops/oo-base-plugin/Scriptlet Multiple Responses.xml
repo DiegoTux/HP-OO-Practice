@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<operation id="72599458-496b-4b73-9983-4d6f49580a77">
+  <descriptionCdata><![CDATA[72599458-496b-4b73-9983-4d6f49580a77.description=<pre>This is an operation that does nothing. It can be used to\ncall scriptlets.\nInputs\:\nNone\nResponses\:\nsuccess\nfailure\n</pre>
+]]></descriptionCdata>
+  <annotation>72599458-496b-4b73-9983-4d6f49580a77.description</annotation>
+  <name>Scriptlet Multiple Responses</name>
+  <categories/>
+  <inputs/>
+  <possibleResponses>
+    <opResponse id="8957b2f3-e59d-416b-9c9a-8eef13b06ef7">
+      <annotation></annotation>
+      <name>success</name>
+      <isDefault>true</isDefault>
+      <onFailure>false</onFailure>
+      <type>RESOLVED</type>
+      <matchRules/>
+    </opResponse>
+    <opResponse id="392938e4-5bb7-48ce-8f4f-591f87cf2825">
+      <annotation></annotation>
+      <name>failure</name>
+      <isDefault>false</isDefault>
+      <onFailure>true</onFailure>
+      <type>ERROR</type>
+      <matchRules/>
+    </opResponse>
+    <opResponse id="5c7e00c4-8a96-4aa1-bff9-25333ab242cf">
+      <annotation></annotation>
+      <name>no action</name>
+      <isDefault>false</isDefault>
+      <onFailure>false</onFailure>
+      <type>NO_ACTION_TAKEN</type>
+      <matchRules/>
+    </opResponse>
+    <opResponse id="5cba6d8f-1543-44d4-ad30-ae428bed9d6d">
+      <annotation></annotation>
+      <name>diagnosed</name>
+      <isDefault>false</isDefault>
+      <onFailure>false</onFailure>
+      <type>DIAGNOSED</type>
+      <matchRules/>
+    </opResponse>
+  </possibleResponses>
+  <availableResultExpressions/>
+  <resultExpression id="55e1afe8-a86e-41df-a308-7a10d33623c8">
+    <annotation></annotation>
+    <name>returnCode</name>
+    <fieldName>returnCode</fieldName>
+    <sourceType>RAWRESULT</sourceType>
+    <filters/>
+  </resultExpression>
+  <iconSpec id="1b90be5f-a0ba-474e-b46a-b799975c223a">
+    <baseIcon>text_code_javascript.png</baseIcon>
+    <basePath>/Others/</basePath>
+    <readOnly>false</readOnly>
+    <layers/>
+  </iconSpec>
+  <plugin>
+    <groupId>com.hp.oo</groupId>
+    <artifactId>oo-base-plugin</artifactId>
+    <version>1.23.8</version>
+    <actionName>noOp</actionName>
+  </plugin>
+  <fieldValues/>
+</operation>

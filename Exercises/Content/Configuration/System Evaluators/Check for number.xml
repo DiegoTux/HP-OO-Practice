@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scriptletEvaluator id="8048a746-adc2-4e1a-aa95-c21fcf8b1d75">
+  <descriptionCdata><![CDATA[]]></descriptionCdata>
+  <annotation></annotation>
+  <name>Check for number</name>
+  <scriptlet id="667e7eef-aef2-4b04-babe-2fe1b338fc00">
+    <annotation></annotation>
+    <name>EvaluatorScriptlet</name>
+    <script>/*
+Check whether input is a number
+*/
+if(scriptletInput.length &gt;0) {
+	if(!isNaN(scriptletInput))
+	matchRanges.setMatches(true);
+}
+matchRanges.addRange(0,scriptletInput.length);</script>
+    <type>RHINO</type>
+  </scriptlet>
+</scriptletEvaluator>
